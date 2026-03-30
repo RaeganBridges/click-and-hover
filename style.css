@@ -320,6 +320,24 @@ body:not(.page-home) {
     margin: 0 auto;
 }
 
+/* Page 1 must stay edge-to-edge (wins over rule above — same specificity, later source) */
+body.page1-sky:not(.page-home) {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 2rem clamp(1rem, 4vw, 2.5rem);
+}
+
+body.page1-sky:not(.page-home) .page1-content,
+body.page1-sky:not(.page-home) .sky-toys {
+    max-width: none;
+    width: 100%;
+}
+
+html:has(body.page1-sky) {
+    background-color: #071525;
+}
+
 .page-content h1 {
     margin: 0 0 0.75rem;
     font-size: 1.75rem;
@@ -337,6 +355,39 @@ body:not(.page-home) {
     margin-top: 2rem;
     padding-top: 1.5rem;
     border-top: 1px solid #ccc;
+}
+
+/* Page 4 — song lyrics slideToggle */
+.song-playlist .song-list {
+    margin: 1.25rem 0 0;
+}
+
+.song-block {
+    margin-bottom: 0.65rem;
+}
+
+.song-playlist .song-toggle {
+    display: block;
+    width: 100%;
+    text-align: left;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.song-lyrics {
+    margin-top: 0.35rem;
+    padding: 0.85rem 1rem 1rem;
+    border-left: 3px solid #1a1a1a;
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 0 0 8px 8px;
+}
+
+.lyrics-text {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #222;
+    font-style: italic;
 }
 
 /* Page 2 — cream field + heart rain */

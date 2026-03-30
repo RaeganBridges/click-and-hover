@@ -3,15 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page 4</title>
+    <title>Page 4 — Songs</title>
     <link rel="stylesheet" href="../style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="../script.js" defer></script>
 </head>
 <body>
-    <main class="page-content">
-        <h1>Page 4</h1>
-        <p>This is the fourth page.</p>
+    <main class="page-content song-playlist">
+        <h1>Songs</h1>
+        <p>Tap a title to show or hide the lyrics with jQuery <code>slideToggle</code>.</p>
+
+        <section class="song-list" aria-label="Song lyrics">
+            <article class="song-block">
+                <button type="button" class="song-toggle toggle-btn" id="toggle-jenny" aria-expanded="false" aria-controls="lyrics-jenny">
+                    867-5309 / Jenny — Tommy Tutone
+                </button>
+                <div id="lyrics-jenny" class="song-lyrics" hidden>
+                    <p class="lyrics-text">
+                        Jenny, I've got your number<br>
+                        I need to make you mine<br>
+                        Jenny, don't change your number<br>
+                        867-5309<br>
+                        867-5309<br>
+                        867-5309<br>
+                        867-5309
+                    </p>
+                </div>
+            </article>
+
+            <article class="song-block">
+                <button type="button" class="song-toggle toggle-btn" id="toggle-cecilia" aria-expanded="false" aria-controls="lyrics-cecilia">
+                    Cecilia — Simon &amp; Garfunkel
+                </button>
+                <div id="lyrics-cecilia" class="song-lyrics" hidden>
+                    <p class="lyrics-text">
+                        Celia, you're breaking my heart<br>
+                        You're shaking my confidence daily<br>
+                        Oh, Cecilia, I'm down on my knees<br>
+                        I'm begging you please to come home<br>
+                        Celia, you're breaking my heart<br>
+                        You're shaking my confidence daily
+                    </p>
+                </div>
+            </article>
+
+            <article class="song-block">
+                <button type="button" class="song-toggle toggle-btn" id="toggle-werewolves" aria-expanded="false" aria-controls="lyrics-werewolves">
+                    Werewolves of London — Warren Zevon
+                </button>
+                <div id="lyrics-werewolves" class="song-lyrics" hidden>
+                    <p class="lyrics-text">
+                        Ah-woo, werewolves of London<br>
+                        Ah-woo, werewolves of London<br>
+                        Ah-woo, werewolves of London<br>
+                        Ah-woo, werewolves of London<br>
+                        <br>
+                        I saw a werewolf with a Chinese menu in his hand<br>
+                        Walking through the streets of Soho in the rain<br>
+                        He was looking for the place called Lee Ho Fook's<br>
+                        Gonna get a big dish of beef chow mein
+                    </p>
+                </div>
+            </article>
+
+            <article class="song-block">
+                <button type="button" class="song-toggle toggle-btn" id="toggle-lovely" aria-expanded="false" aria-controls="lyrics-lovely">
+                    Isn't She Lovely — Stevie Wonder
+                </button>
+                <div id="lyrics-lovely" class="song-lyrics" hidden>
+                    <p class="lyrics-text">
+                        Isn't she lovely<br>
+                        Isn't she wonderful<br>
+                        Isn't she precious<br>
+                        Less than one minute old<br>
+                        I never thought through love we'd be<br>
+                        Making one as lovely as she<br>
+                        But isn't she lovely made from love
+                    </p>
+                </div>
+            </article>
+        </section>
+
         <div class="back-row">
             <a class="link" href="../index.html">Back to home</a>
         </div>

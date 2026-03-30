@@ -126,8 +126,21 @@ $(function () {
         });
     }
 
+    if ($(".song-playlist").length) {
+        $(".song-lyrics").removeAttr("hidden").hide();
+        $(".song-toggle").on("click", function () {
+            var $btn = $(this);
+            var panelId = $btn.attr("aria-controls");
+            $("#" + panelId).slideToggle(280, function () {
+                $btn.attr("aria-expanded", $(this).is(":visible"));
+            });
+        });
+    }
+
     var $pageContent = $(".page-content");
     if ($pageContent.length) {
-        $pageContent.hide().fadeIn(350);
+        if (!$pageContent.hasClass("song-playlist")) {
+            $pageContent.hide().fadeIn(350);
+        }
     }
 });
