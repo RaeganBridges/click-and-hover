@@ -542,8 +542,7 @@ body.page2-hearts {
     z-index: 1;
 }
 
-body.page2-hearts .page-content h1,
-body.page2-hearts .heart-toys-title {
+body.page2-hearts .page-content h1 {
     color: #1a1a1a;
 }
 
@@ -570,13 +569,6 @@ html:has(body.page2-hearts) {
 
 .heart-toys {
     margin: 1.5rem 0 0;
-}
-
-.heart-toys-title {
-    margin: 0 0 0.75rem;
-    font-size: 1.15rem;
-    font-weight: 600;
-    text-align: left;
 }
 
 .heart-stage {
