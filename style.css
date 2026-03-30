@@ -285,15 +285,11 @@ body.page1-sky .float-box-row {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
 }
 
-/* Page 3 — room to scroll */
-.page3-scroll-spacer {
-    height: 220vh;
-    pointer-events: none;
-}
-
+/* Page 3 — photo swap */
 .page3-photo-frame {
     margin: 1.25rem 0 0.35rem;
     max-width: 22rem;
+    pointer-events: auto;
 }
 
 .page3-photo {
@@ -302,6 +298,9 @@ body.page1-sky .float-box-row {
     max-width: 100%;
     height: auto;
     cursor: pointer;
+    pointer-events: auto;
+    position: relative;
+    z-index: 1;
     border-radius: 6px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
@@ -404,12 +403,12 @@ body.page4-accordion {
     color: #222;
 }
 
-/* Page 2 — same full-bleed deep blue as page 1 + heart rain */
+/* Page 2 — cream field + heart rain */
 body.page2-hearts {
     min-height: 100vh;
-    background-color: #071525;
-    background-image: radial-gradient(ellipse 120% 80% at 50% 0%, #0f2847 0%, #071525 55%);
-    color: #e8eef7;
+    background-color: #fff8e7;
+    background-image: radial-gradient(ellipse 100% 60% at 50% 0%, #fff3d4 0%, #fff8e7 55%);
+    color: #1a1a1a;
 }
 
 .page2-content {
@@ -419,24 +418,11 @@ body.page2-hearts {
 
 body.page2-hearts .page-content h1,
 body.page2-hearts .heart-toys-title {
-    color: #f4f8ff;
+    color: #1a1a1a;
 }
 
 body.page2-hearts .back-row {
-    border-top-color: rgba(255, 255, 255, 0.18);
-}
-
-body.page2-hearts .link {
-    border-color: rgba(255, 255, 255, 0.55);
-    background: rgba(255, 255, 255, 0.08);
-    color: #f0f6ff;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
-}
-
-body.page2-hearts .link:hover {
-    background: #f0f6ff;
-    color: #071525;
-    border-color: #f0f6ff;
+    border-top-color: #ccc;
 }
 
 body.page2-hearts:not(.page-home) {
@@ -453,7 +439,7 @@ body.page2-hearts:not(.page-home) .heart-toys {
 }
 
 html:has(body.page2-hearts) {
-    background-color: #071525;
+    background-color: #fff8e7;
 }
 
 .heart-toys {

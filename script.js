@@ -106,26 +106,6 @@ $(function () {
         });
     }
 
-    if ($("body").is(".page3-scroll")) {
-        $(window).one("scroll", function () {
-            window.alert("https://youtu.be/dQw4w9WgXcQ");
-        });
-    }
-
-    var $page3Photo = $("#page3-photo");
-    if ($page3Photo.length) {
-        var page3StaticSrc = "../images/page3-static.png";
-        var page3AnimatedSrc = "../images/page3-animated.png";
-        $page3Photo.on("click", function () {
-            var $img = $(this);
-            if ($img.data("showingAnimated")) {
-                $img.attr("src", page3StaticSrc).data("showingAnimated", false);
-            } else {
-                $img.attr("src", page3AnimatedSrc).data("showingAnimated", true);
-            }
-        });
-    }
-
     $(".content").removeAttr("hidden").hide();
     $(".title").click(function () {
         $(this).parents(".week").find(".content").slideToggle();
@@ -133,8 +113,23 @@ $(function () {
 
     var $pageContent = $(".page-content");
     if ($pageContent.length) {
-        if (!$pageContent.hasClass("song-playlist")) {
+        if (
+            !$pageContent.hasClass("song-playlist") &&
+            $pageContent.find("#page3-photo").length === 0
+        ) {
             $pageContent.hide().fadeIn(350);
         }
     }
+
+    $(document).on("click", "#page3-photo", function () {
+        var $img = $(this);
+        var staticSrc = $img.attr("data-static") || "../images/page3-static.png";
+        var animatedSrc = $img.attr("data-animated") || "../images/page3-animated.png";
+        if ($img.data("showingAnimated")) {
+            $img.attr("src", staticSrc).removeData("showingAnimated");
+        } else {
+            var sep = animatedSrc.indexOf("?") === -1 ? "?" : "&";
+            $img.attr("src", animatedSrc + sep + "t=" + Date.now()).data("showingAnimated", true);
+        }
+    });
 });
