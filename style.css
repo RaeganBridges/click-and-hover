@@ -356,9 +356,135 @@ html:has(body.page1-sky) {
     border-top: 1px solid #ccc;
 }
 
-/* Page 4 — accordion (title / content + slideToggle) */
+/* Page 4 — retro background + accordion */
+html:has(body.page4-accordion) {
+    background-color: #a67c52;
+}
+
 body.page4-accordion {
     margin: 0;
+    min-height: 100vh;
+    background-color: #cfa876;
+    background-image:
+        repeating-linear-gradient(
+            180deg,
+            rgba(62, 38, 24, 0.04) 0 2px,
+            transparent 2px 5px
+        ),
+        radial-gradient(ellipse 100% 55% at 50% 0%, rgba(255, 228, 180, 0.65) 0%, transparent 58%),
+        linear-gradient(168deg, #f0dcc0 0%, #d9b17a 38%, #b88952 72%, #8f6238 100%);
+    background-attachment: fixed;
+    color: #2b1f14;
+}
+
+body.page4-accordion .page-content h1 {
+    color: #3d2415;
+    text-shadow: 1px 1px 0 rgba(255, 240, 210, 0.5);
+    letter-spacing: 0.02em;
+}
+
+body.page4-accordion .page-content p {
+    color: #4a3528;
+}
+
+body.page4-accordion .back-row {
+    border-top-color: rgba(61, 36, 21, 0.35);
+}
+
+/* Jukebox-style playlist frame */
+body.page4-accordion .song-playlist .song-list {
+    margin: 1.5rem 0 0;
+    padding: 1rem 1.125rem 1.2rem;
+    border: 4px solid #2a1810;
+    border-radius: 8px;
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.12) 0%, transparent 45%),
+        linear-gradient(180deg, #5c4033 0%, #3d2618 48%, #2a1810 100%);
+    box-shadow:
+        6px 6px 0 rgba(34, 20, 12, 0.35),
+        inset 0 1px 0 rgba(255, 230, 190, 0.2),
+        inset 0 -2px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* Each song = retro “tape card” */
+body.page4-accordion .song-playlist .week {
+    margin: 0 0 12px;
+    border: 3px solid #1e140c;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #1e140c;
+    box-shadow:
+        3px 3px 0 rgba(34, 20, 12, 0.4),
+        inset 0 0 0 1px rgba(255, 220, 170, 0.12);
+}
+
+body.page4-accordion .song-playlist .week:last-child {
+    margin-bottom: 0;
+}
+
+/* Clickable title row — beveled plastic / enamel */
+body.page4-accordion .song-playlist .title {
+    position: relative;
+    border: none;
+    border-bottom: 3px solid #1e140c;
+    padding: 16px 18px 16px 26px;
+    background: linear-gradient(180deg, #fffef9 0%, #f2e4cc 42%, #dcc9a8 100%);
+    color: #1a0f08;
+    font-weight: 700;
+    letter-spacing: 0.045em;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
+    box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.9);
+}
+
+body.page4-accordion .song-playlist .title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    background: linear-gradient(180deg, #8fbc4a 0%, #5a7a2d 55%, #3d5220 100%);
+    box-shadow: inset -2px 0 3px rgba(0, 0, 0, 0.2);
+}
+
+body.page4-accordion .song-playlist .title:hover {
+    background: linear-gradient(180deg, #fff8d8 0%, #ffd978 38%, #f0b850 100%);
+    color: #140a04;
+}
+
+body.page4-accordion .song-playlist .title:active {
+    background: linear-gradient(180deg, #e8d4a0 0%, #d4b87a 100%);
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+body.page4-accordion .song-playlist .title:focus-visible {
+    outline: 3px solid #c4781a;
+    outline-offset: 2px;
+    z-index: 1;
+}
+
+/* Lyrics panel — lined notebook / typewriter */
+body.page4-accordion .song-playlist .content {
+    margin: 0;
+    border: none;
+    padding: 18px 20px 22px 24px;
+    background-color: #faf3e4;
+    background-image: repeating-linear-gradient(
+        transparent,
+        transparent 1.35em,
+        rgba(139, 105, 52, 0.14) 1.35em,
+        rgba(139, 105, 52, 0.14) calc(1.35em + 1px)
+    );
+    box-shadow: inset 0 4px 12px rgba(45, 30, 18, 0.08);
+}
+
+body.page4-accordion .song-playlist .lyrics-text {
+    color: #2c1810;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.92rem;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
 }
 
 .song-playlist .song-list {
