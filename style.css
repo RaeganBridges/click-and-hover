@@ -163,6 +163,12 @@ body {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
 }
 
+/* Page 3 — room to scroll */
+.page3-scroll-spacer {
+    height: 220vh;
+    pointer-events: none;
+}
+
 /* Sub-pages */
 body:not(.page-home) {
     padding: 2rem 1.5rem;

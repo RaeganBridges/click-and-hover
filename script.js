@@ -99,6 +99,12 @@ $(function () {
         });
     }
 
+    if ($("body").is(".page3-scroll")) {
+        $(window).one("scroll", function () {
+            window.alert("https://youtu.be/dQw4w9WgXcQ");
+        });
+    }
+
     var $pageContent = $(".page-content");
     if ($pageContent.length) {
         $pageContent.hide().fadeIn(350);
