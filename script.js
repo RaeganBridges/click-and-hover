@@ -48,6 +48,57 @@ $(function () {
         syncSubtractState();
     }
 
+    var $bigHeart = $("#big-heart");
+    if ($bigHeart.length) {
+        $bigHeart.on("mouseenter", function () {
+            var winH = $(window).height();
+            var winW = $(window).width();
+            var count = 20;
+            var i;
+
+            for (i = 0; i < count; i += 1) {
+                (function (index) {
+                    window.setTimeout(function () {
+                        var isBlush = index % 2 === 1;
+                        var $heart = $("<div>")
+                            .addClass("floating-mini-heart")
+                            .addClass(isBlush ? "is-blush" : "is-ruby");
+                        var left = Math.random() * Math.max(winW - 48, 8);
+
+                        $heart.css({
+                            left: left,
+                            top: -56,
+                            opacity: 0
+                        });
+                        $("body").append($heart);
+
+                        $heart.animate(
+                            { opacity: 1 },
+                            200,
+                            "swing",
+                            function () {
+                                $heart.animate(
+                                    { top: winH + 64 },
+                                    1200 + Math.floor(Math.random() * 900),
+                                    "linear",
+                                    function () {
+                                        $heart.animate(
+                                            { opacity: 0 },
+                                            220,
+                                            function () {
+                                                $heart.remove();
+                                            }
+                                        );
+                                    }
+                                );
+                            }
+                        );
+                    }, index * 35);
+                })(i);
+            }
+        });
+    }
+
     var $appendixRoot = $("#appendix-2-root");
     if ($appendixRoot.length) {
         $appendixRoot.append(

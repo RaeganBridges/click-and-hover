@@ -208,3 +208,93 @@ body:not(.page-home) {
     padding-top: 1.5rem;
     border-top: 1px solid #ccc;
 }
+
+/* Page 2 — cream field + heart rain */
+body.page2-hearts {
+    background-color: #fff8e7;
+}
+
+.page2-content {
+    position: relative;
+    z-index: 1;
+}
+
+.heart-stage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 42vh;
+    margin: 1rem 0 2rem;
+}
+
+.big-heart {
+    position: relative;
+    width: 200px;
+    height: 175px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.big-heart::before,
+.big-heart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 160px;
+    background: #ff7eb6;
+    border-radius: 100px 100px 0 0;
+}
+
+.big-heart::before {
+    left: 100px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.big-heart::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+.floating-mini-heart {
+    position: fixed;
+    width: 36px;
+    height: 32px;
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0;
+}
+
+.floating-mini-heart::before,
+.floating-mini-heart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 18px;
+    height: 28px;
+    border-radius: 18px 18px 0 0;
+}
+
+.floating-mini-heart::before {
+    left: 18px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.floating-mini-heart::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+.floating-mini-heart.is-ruby::before,
+.floating-mini-heart.is-ruby::after {
+    background: #c9182e;
+}
+
+.floating-mini-heart.is-blush::before,
+.floating-mini-heart.is-blush::after {
+    background: #ffc2d4;
+}
