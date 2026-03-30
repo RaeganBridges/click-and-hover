@@ -105,6 +105,20 @@ $(function () {
         });
     }
 
+    var $page3Photo = $("#page3-photo");
+    if ($page3Photo.length) {
+        var page3StaticSrc = "../images/page3-static.png";
+        var page3AnimatedSrc = "../images/page3-animated.png";
+        $page3Photo.on("click", function () {
+            var $img = $(this);
+            if ($img.data("showingAnimated")) {
+                $img.attr("src", page3StaticSrc).data("showingAnimated", false);
+            } else {
+                $img.attr("src", page3AnimatedSrc).data("showingAnimated", true);
+            }
+        });
+    }
+
     var $pageContent = $(".page-content");
     if ($pageContent.length) {
         $pageContent.hide().fadeIn(350);
