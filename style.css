@@ -404,9 +404,12 @@ body.page4-accordion {
     color: #222;
 }
 
-/* Page 2 — cream field + heart rain */
+/* Page 2 — same full-bleed deep blue as page 1 + heart rain */
 body.page2-hearts {
-    background-color: #fff8e7;
+    min-height: 100vh;
+    background-color: #071525;
+    background-image: radial-gradient(ellipse 120% 80% at 50% 0%, #0f2847 0%, #071525 55%);
+    color: #e8eef7;
 }
 
 .page2-content {
@@ -414,12 +417,62 @@ body.page2-hearts {
     z-index: 1;
 }
 
+body.page2-hearts .page-content h1,
+body.page2-hearts .heart-toys-title {
+    color: #f4f8ff;
+}
+
+body.page2-hearts .back-row {
+    border-top-color: rgba(255, 255, 255, 0.18);
+}
+
+body.page2-hearts .link {
+    border-color: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.08);
+    color: #f0f6ff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+body.page2-hearts .link:hover {
+    background: #f0f6ff;
+    color: #071525;
+    border-color: #f0f6ff;
+}
+
+body.page2-hearts:not(.page-home) {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 2rem clamp(1rem, 4vw, 2.5rem);
+}
+
+body.page2-hearts:not(.page-home) .page2-content,
+body.page2-hearts:not(.page-home) .heart-toys {
+    max-width: none;
+    width: 100%;
+}
+
+html:has(body.page2-hearts) {
+    background-color: #071525;
+}
+
+.heart-toys {
+    margin: 1.5rem 0 0;
+}
+
+.heart-toys-title {
+    margin: 0 0 0.75rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-align: left;
+}
+
 .heart-stage {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 42vh;
-    margin: 1rem 0 2rem;
+    margin: 0 0 2rem;
 }
 
 .big-heart {
