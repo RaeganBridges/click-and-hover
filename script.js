@@ -111,9 +111,18 @@ $(function () {
         $(this).parents(".week").find(".content").slideToggle();
     });
 
+    if ($("body").is(".page3-scroll")) {
+        $(window).one("scroll", function () {
+            window.alert("https://youtu.be/dQw4w9WgXcQ");
+        });
+    }
+
     var $pageContent = $(".page-content");
     if ($pageContent.length) {
-        if (!$pageContent.hasClass("song-playlist")) {
+        if (
+            !$pageContent.hasClass("song-playlist") &&
+            $pageContent.find(".page3-scroll-spacer").length === 0
+        ) {
             $pageContent.hide().fadeIn(350);
         }
     }
