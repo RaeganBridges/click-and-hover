@@ -24,6 +24,30 @@ $(function () {
         }, 180);
     });
 
+    var $boxRow = $("#float-box-row");
+    if ($boxRow.length) {
+        var nextBoxNum = 1;
+        var $addBoxBtn = $("#add-box-btn");
+        var $subtractBoxBtn = $("#subtract-box-btn");
+
+        function syncSubtractState() {
+            $subtractBoxBtn.prop("disabled", $boxRow.children().length === 0);
+        }
+
+        $addBoxBtn.on("click", function () {
+            $boxRow.append($("<div>").text(String(nextBoxNum)));
+            nextBoxNum += 1;
+            syncSubtractState();
+        });
+
+        $subtractBoxBtn.on("click", function () {
+            $boxRow.children().last().remove();
+            syncSubtractState();
+        });
+
+        syncSubtractState();
+    }
+
     var $appendixRoot = $("#appendix-2-root");
     if ($appendixRoot.length) {
         $appendixRoot.append(

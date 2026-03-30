@@ -95,6 +95,33 @@ body {
     margin: 10px;
 }
 
+.box-toys {
+    margin: 1.5rem 0 0;
+}
+
+.box-toys-title {
+    margin: 0 0 0.75rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.box-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.box-controls .toggle-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.box-controls .toggle-btn:disabled:hover {
+    background: #fff;
+    color: #1a1a1a;
+}
+
 #container {
     display: flex;
     flex-wrap: wrap;
