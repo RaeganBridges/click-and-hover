@@ -35,7 +35,14 @@ $(function () {
         }
 
         $addBoxBtn.on("click", function () {
-            $boxRow.append($("<div>").text(String(nextBoxNum)));
+            var isPlanet = nextBoxNum % 2 === 0;
+            var $piece = $("<div>").addClass("sky-piece");
+            if (isPlanet) {
+                $piece.addClass("sky-planet").attr("aria-label", "Planet");
+            } else {
+                $piece.addClass("sky-star").attr("aria-label", "Star");
+            }
+            $boxRow.append($piece);
             nextBoxNum += 1;
             syncSubtractState();
         });
