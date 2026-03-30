@@ -8,17 +8,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="../script.js" defer></script>
 </head>
-<body>
+<body class="page4-accordion">
     <main class="page-content song-playlist">
         <h1>Songs</h1>
         <p>Tap a title to show or hide the lyrics with jQuery <code>slideToggle</code>.</p>
 
         <section class="song-list" aria-label="Song lyrics">
-            <article class="song-block">
-                <button type="button" class="song-toggle toggle-btn" id="toggle-jenny" aria-expanded="false" aria-controls="lyrics-jenny">
+            <article class="week">
+                <button type="button" class="title" id="toggle-jenny">
                     867-5309 / Jenny — Tommy Tutone
                 </button>
-                <div id="lyrics-jenny" class="song-lyrics" hidden>
+                <div id="lyrics-jenny" class="content" hidden>
                     <p class="lyrics-text">
                         Jenny, I've got your number<br>
                         I need to make you mine<br>
@@ -31,11 +31,11 @@
                 </div>
             </article>
 
-            <article class="song-block">
-                <button type="button" class="song-toggle toggle-btn" id="toggle-cecilia" aria-expanded="false" aria-controls="lyrics-cecilia">
+            <article class="week">
+                <button type="button" class="title" id="toggle-cecilia">
                     Cecilia — Simon &amp; Garfunkel
                 </button>
-                <div id="lyrics-cecilia" class="song-lyrics" hidden>
+                <div id="lyrics-cecilia" class="content" hidden>
                     <p class="lyrics-text">
                         Celia, you're breaking my heart<br>
                         You're shaking my confidence daily<br>
@@ -47,11 +47,11 @@
                 </div>
             </article>
 
-            <article class="song-block">
-                <button type="button" class="song-toggle toggle-btn" id="toggle-werewolves" aria-expanded="false" aria-controls="lyrics-werewolves">
+            <article class="week">
+                <button type="button" class="title" id="toggle-werewolves">
                     Werewolves of London — Warren Zevon
                 </button>
-                <div id="lyrics-werewolves" class="song-lyrics" hidden>
+                <div id="lyrics-werewolves" class="content" hidden>
                     <p class="lyrics-text">
                         Ah-woo, werewolves of London<br>
                         Ah-woo, werewolves of London<br>
@@ -66,11 +66,11 @@
                 </div>
             </article>
 
-            <article class="song-block">
-                <button type="button" class="song-toggle toggle-btn" id="toggle-lovely" aria-expanded="false" aria-controls="lyrics-lovely">
+            <article class="week">
+                <button type="button" class="title" id="toggle-lovely">
                     Isn't She Lovely — Stevie Wonder
                 </button>
-                <div id="lyrics-lovely" class="song-lyrics" hidden>
+                <div id="lyrics-lovely" class="content" hidden>
                     <p class="lyrics-text">
                         Isn't she lovely<br>
                         Isn't she wonderful<br>

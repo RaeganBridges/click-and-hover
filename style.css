@@ -357,37 +357,51 @@ html:has(body.page1-sky) {
     border-top: 1px solid #ccc;
 }
 
-/* Page 4 — song lyrics slideToggle */
+/* Page 4 — accordion (title / content + slideToggle) */
+body.page4-accordion {
+    margin: 0;
+}
+
 .song-playlist .song-list {
     margin: 1.25rem 0 0;
 }
 
-.song-block {
-    margin-bottom: 0.65rem;
+.song-playlist .week {
+    margin: 0;
 }
 
-.song-playlist .song-toggle {
+.song-playlist .title {
     display: block;
     width: 100%;
-    text-align: left;
-    border-radius: 8px;
+    box-sizing: border-box;
+    margin: 0;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 20px;
+    cursor: pointer;
+    font: inherit;
     font-weight: 600;
+    text-align: left;
+    background: #fff;
+    color: #1a1a1a;
 }
 
-.song-lyrics {
-    margin-top: 0.35rem;
-    padding: 0.85rem 1rem 1rem;
-    border-left: 3px solid #1a1a1a;
-    background: rgba(255, 255, 255, 0.65);
-    border-radius: 0 0 8px 8px;
+.song-playlist .title:hover {
+    background: yellow;
 }
 
-.lyrics-text {
+.song-playlist .content {
+    padding: 20px;
+    display: none;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+}
+
+.song-playlist .lyrics-text {
     margin: 0;
     font-size: 0.95rem;
     line-height: 1.65;
     color: #222;
-    font-style: italic;
 }
 
 /* Page 2 — cream field + heart rain */

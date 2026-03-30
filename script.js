@@ -126,16 +126,10 @@ $(function () {
         });
     }
 
-    if ($(".song-playlist").length) {
-        $(".song-lyrics").removeAttr("hidden").hide();
-        $(".song-toggle").on("click", function () {
-            var $btn = $(this);
-            var panelId = $btn.attr("aria-controls");
-            $("#" + panelId).slideToggle(280, function () {
-                $btn.attr("aria-expanded", $(this).is(":visible"));
-            });
-        });
-    }
+    $(".content").removeAttr("hidden").hide();
+    $(".title").click(function () {
+        $(this).parents(".week").find(".content").slideToggle();
+    });
 
     var $pageContent = $(".page-content");
     if ($pageContent.length) {
