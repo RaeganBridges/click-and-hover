@@ -130,6 +130,27 @@ body:not(.page-home) {
     color: #333;
 }
 
+.appendix-root {
+    margin: 1.5rem 0 0;
+    padding: 1rem 1.1rem;
+    border: 1px dashed #999;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.appendix-heading {
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.appendix-text {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: #444;
+}
+
 .back-row {
     margin-top: 2rem;
     padding-top: 1.5rem;

@@ -24,6 +24,18 @@ $(function () {
         }, 180);
     });
 
+    var $appendixRoot = $("#appendix-2-root");
+    if ($appendixRoot.length) {
+        $appendixRoot.append(
+            $("<h2>").addClass("appendix-heading").text("Appendix 2")
+        );
+        $appendixRoot.append(
+            $("<p>").addClass("appendix-text").text(
+                "This block was inserted with two separate jQuery append calls."
+            )
+        );
+    }
+
     var $pageContent = $(".page-content");
     if ($pageContent.length) {
         $pageContent.hide().fadeIn(350);
