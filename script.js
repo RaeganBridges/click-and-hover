@@ -113,23 +113,8 @@ $(function () {
 
     var $pageContent = $(".page-content");
     if ($pageContent.length) {
-        if (
-            !$pageContent.hasClass("song-playlist") &&
-            $pageContent.find("#page3-photo").length === 0
-        ) {
+        if (!$pageContent.hasClass("song-playlist")) {
             $pageContent.hide().fadeIn(350);
         }
     }
-
-    $(document).on("click", "#page3-photo", function () {
-        var $img = $(this);
-        var staticSrc = $img.attr("data-static") || "../images/page3-static.png";
-        var animatedSrc = $img.attr("data-animated") || "../images/page3-animated.png";
-        if ($img.data("showingAnimated")) {
-            $img.attr("src", staticSrc).removeData("showingAnimated");
-        } else {
-            var sep = animatedSrc.indexOf("?") === -1 ? "?" : "&";
-            $img.attr("src", animatedSrc + sep + "t=" + Date.now()).data("showingAnimated", true);
-        }
-    });
 });

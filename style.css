@@ -285,31 +285,96 @@ body.page1-sky .float-box-row {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
 }
 
-/* Page 3 — photo swap */
-.page3-photo-frame {
-    margin: 1.25rem 0 0.35rem;
-    max-width: 22rem;
-    pointer-events: auto;
+/* Page 3 — 80s nostalgia (neon + dusk grid) */
+html:has(body.page3) {
+    background-color: #060214;
 }
 
-.page3-photo {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    cursor: pointer;
-    pointer-events: auto;
+body.page3 {
+    position: relative;
+    min-height: 100vh;
+    color: #c8f0ff;
+    background-color: #12082a;
+    background-image:
+        radial-gradient(ellipse 130% 90% at 50% 110%, rgba(255, 60, 180, 0.35) 0%, transparent 52%),
+        radial-gradient(ellipse 70% 45% at 15% 15%, rgba(0, 255, 255, 0.14) 0%, transparent 55%),
+        linear-gradient(185deg, #070018 0%, #14083c 38%, #1f0d52 72%, #2a1048 100%);
+    background-attachment: fixed;
+}
+
+body.page3::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.4;
+    background-image: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 3px,
+        rgba(0, 255, 255, 0.045) 3px,
+        rgba(0, 255, 255, 0.045) 4px
+    );
+}
+
+body.page3 .page-content {
     position: relative;
     z-index: 1;
-    border-radius: 6px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 
-.page3-photo-caption {
-    margin: 0 0 1.5rem;
-    font-size: 0.9rem;
-    color: #555;
-    text-align: left;
+body.page3 .page-content h1 {
+    margin: 0 0 1.25rem;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: clamp(1.4rem, 4.2vw, 1.95rem);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    line-height: 1.25;
+    text-shadow:
+        0 0 10px rgba(0, 255, 255, 0.95),
+        0 0 28px rgba(255, 0, 200, 0.7),
+        3px 3px 0 #ff00aa,
+        -1px -1px 0 #00e5ff;
+}
+
+body.page3 .back-row {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 2px solid #ff2da8;
+    box-shadow: 0 -6px 24px rgba(255, 45, 168, 0.25);
+}
+
+body.page3 .back-row .link {
+    border: 2px solid #00f5ff;
+    background: rgba(8, 4, 28, 0.65);
+    color: #9fffe8;
+    font-weight: 700;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    box-shadow:
+        0 0 14px rgba(0, 255, 255, 0.4),
+        inset 0 0 22px rgba(255, 0, 200, 0.1);
+}
+
+body.page3 .back-row .link:hover {
+    background: linear-gradient(
+        100deg,
+        rgba(255, 0, 170, 0.4) 0%,
+        rgba(0, 255, 255, 0.28) 100%
+    );
+    color: #ffffff;
+    border-color: #ff6ec7;
+    box-shadow:
+        0 0 22px rgba(255, 100, 200, 0.55),
+        0 0 12px rgba(0, 255, 255, 0.45);
+    transform: translateY(-2px);
+}
+
+body.page3 .back-row .link:focus-visible {
+    outline: 2px solid #00f5ff;
+    outline-offset: 3px;
 }
 
 /* Sub-pages */
@@ -377,18 +442,82 @@ body.page4-accordion {
     color: #2b1f14;
 }
 
-body.page4-accordion .page-content h1 {
-    color: #3d2415;
-    text-shadow: 1px 1px 0 rgba(255, 240, 210, 0.5);
-    letter-spacing: 0.02em;
+/* Top “marquee” — matches jukebox vibe (was plain on the gradient) */
+body.page4-accordion .page4-retro-header {
+    position: relative;
+    margin: 0 0 0.35rem;
+    padding: 1.2rem 1.35rem 1.3rem 1.85rem;
+    border: 3px solid #1e140c;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #fffef8 0%, #f2e2c8 42%, #dcc39a 100%);
+    box-shadow:
+        5px 5px 0 rgba(34, 20, 12, 0.32),
+        inset 0 2px 0 rgba(255, 255, 255, 0.85),
+        inset 0 -8px 16px rgba(120, 80, 50, 0.06);
+    overflow: hidden;
 }
 
-body.page4-accordion .page-content p {
-    color: #4a3528;
+body.page4-accordion .page4-retro-header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 12px;
+    background: linear-gradient(180deg, #ff9a3c 0%, #e85d2c 45%, #9a3412 100%);
+    box-shadow: inset -3px 0 5px rgba(0, 0, 0, 0.25);
+}
+
+body.page4-accordion .page4-retro-header h1 {
+    margin: 0 0 0.35rem;
+    padding-left: 0.35rem;
+    color: #1e140c;
+    font-weight: 800;
+    font-size: clamp(1.45rem, 4.2vw, 1.9rem);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-shadow:
+        2px 2px 0 rgba(255, 210, 140, 0.5),
+        0 0 24px rgba(255, 180, 80, 0.15);
+}
+
+body.page4-accordion .page4-retro-header p {
+    margin: 0;
+    padding: 0.65rem 0 0 0.35rem;
+    border-top: 2px dashed rgba(120, 72, 40, 0.4);
+    color: #3d2618;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
 }
 
 body.page4-accordion .back-row {
-    border-top-color: rgba(61, 36, 21, 0.35);
+    margin-top: 1.75rem;
+    padding: 1rem 1.1rem 0;
+    border-top: none;
+    border: 3px solid #2a1810;
+    border-radius: 6px;
+    background: linear-gradient(180deg, #4a3428 0%, #2a1810 100%);
+    box-shadow:
+        4px 4px 0 rgba(34, 20, 12, 0.3),
+        inset 0 1px 0 rgba(255, 200, 140, 0.12);
+}
+
+body.page4-accordion .back-row .link {
+    border-color: #f5e6d0;
+    background: linear-gradient(180deg, #fffef6 0%, #e8d4b8 100%);
+    color: #1e140c;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    box-shadow: 2px 2px 0 rgba(34, 20, 12, 0.2);
+}
+
+body.page4-accordion .back-row .link:hover {
+    background: linear-gradient(180deg, #ffe566 0%, #f0c040 100%);
+    color: #140a04;
+    border-color: #1e140c;
 }
 
 /* Jukebox-style playlist frame */
